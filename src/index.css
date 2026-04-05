@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #8b5cf6;
+    --neon-green: #00ff88;
+    --neon-yellow: #ffff00;
+    --dark-bg: #0a0a0f;
+    --card-bg: #12121a;
+    --border-glow: rgba(0, 243, 255, 0.3);
+  }
+  
+  body {
+    @apply min-h-screen text-white;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 50%, #0a0a0f 100%);
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  }
+}
+
+@layer components {
+  .cyber-card {
+    @apply relative rounded-xl p-6;
+    background: linear-gradient(145deg, rgba(18, 18, 26, 0.95), rgba(26, 10, 46, 0.9));
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-cyber {
+    @apply relative font-bold py-3 px-6 rounded-lg overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(139, 92, 246, 0.1));
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .btn-cyber:hover {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.3), rgba(139, 92, 246, 0.3));
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4), 0 0 40px rgba(0, 243, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .neon-text {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  }
+  
+  .rarity-common { color: #9ca3af; }
+  .rarity-uncommon { color: #22c55e; }
+  .rarity-rare { color: #3b82f6; }
+  .rarity-epic { color: #a855f7; }
+  .rarity-legendary { color: #f59e0b; animation: legendary-glow 2s ease-in-out infinite; }
+}
